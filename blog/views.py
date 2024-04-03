@@ -2,14 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from blog.models import Post
 
 
-def index(request):
-    return render(request, 'blog/index.html')
-
-
-def about(request):
-    return render(request, 'blog/about.html')
-
-
 def post_list(request):
     posts = Post.published.all()
     return render(request,
