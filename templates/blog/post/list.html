@@ -1,0 +1,28 @@
+{% load static %}
+{% include 'base.html' %}
+<body>
+
+{% include 'header_menu.html' %}
+    <h1>Список публикаций нашей компании</h1>
+    {% for post in posts %}
+        <h2>
+            <a href="{% url 'blog:post_detail' post.id %}"> {{ post.title }}</a>
+        </h2>
+        <p class="date">
+            Дата публикации {{ post.publish }} by {{ post.author }}
+        </p>
+        {{ post.body|truncatewords:30|linebreaks }}
+    {% endfor %}
+
+{% include 'futer_base.html' %}
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="{% static 'js/all.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/portfolio.js' %}"></script>
+    <script src="{% static 'js/hoverdir.js' %}"></script>
+
+</body>
