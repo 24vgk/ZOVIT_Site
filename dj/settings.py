@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
-    'zovit.apps.ZovitConfig'
+    'zovit.apps.ZovitConfig',
+    'taggit'
 ]
 
 MIDDLEWARE = [
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
 
@@ -129,3 +130,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'dj.email.EmailBackend'
+EMAIL_HOST = 'smtp.timeweb.ru'
+EMAIL_HOST_USER = 'admin@zovit.pro'
+EMAIL_HOST_PASSWORD = 'V1qaz2wsx'
+EMAIL_PORT = 587
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = True
